@@ -57,3 +57,10 @@ sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
+
+
+%changelog
+* Fri Feb 17 2012 Andrey Bondrov <abondrov@mandriva.org> 0.61-1mdv2011.0
++ Revision: 776145
+- imported package brainparty
+

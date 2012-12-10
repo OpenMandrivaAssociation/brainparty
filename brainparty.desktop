@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Brain Party
+Comment=Brain-stretching game with 36 minigames
+Exec=brainparty
+Categories=X-MandrivaLinux-MoreApplications-Games-Puzzles;Game;LogicGame;
+Icon=brainparty
+MimeType=
