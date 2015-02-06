@@ -2,7 +2,7 @@
 
 Name:		brainparty
 Version:	0.61
-Release:	%mkrel 1
+Release:	2
 Summary:	Brain-stretching game with 36 minigames
 License:	GPLv3
 Group:		Games/Puzzles
