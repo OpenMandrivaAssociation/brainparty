@@ -11,12 +11,12 @@ Source0:	http://launchpad.net/brainparty/trunk/0.61/+download/%{name}%{version}.
 Source1:	%{name}-wrapper.sh
 Source2:	%{name}.desktop
 Source3:	%{name}.png
-BuildRequires:	SDL-devel
-BuildRequires:	SDL_mixer-devel
-BuildRequires:	SDL_ttf-devel
-BuildRequires:	SDL_gfx-devel
-BuildRequires:	SDL_image-devel
-BuildRequires:	mesaglu-devel
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(SDL_ttf)
+BuildRequires:	pkgconfig(SDL_gfx)
+BuildRequires:	pkgconfig(SDL_image)
+BuildRequires:	pkgconfig(glu)
 
 %description
 Brain Party is a puzzle-solving, brain-stretching game that comes with
@@ -31,7 +31,6 @@ sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 %make
 
 %install
-%__rm -rf %{buildroot}
 %__mkdir_p %{buildroot}%{_datadir}/%{name}
 %__install -D -m 644 Content/* %{buildroot}%{_datadir}/%{name}/
 
@@ -44,11 +43,8 @@ sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 %__mkdir_p %{buildroot}%{_datadir}/pixmaps/
 %__install -D -m 644 %{SOURCE3} %{buildroot}%{_datadir}/pixmaps/
 
-%clean
-%__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %doc README COPYING CREDITS
 %{_bindir}/%{name}
 %{_bindir}/%{name}-bin
@@ -58,9 +54,4 @@ sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 %{_datadir}/pixmaps/%{name}.png
 
 
-
-%changelog
-* Fri Feb 17 2012 Andrey Bondrov <abondrov@mandriva.org> 0.61-1mdv2011.0
-+ Revision: 776145
-- imported package brainparty
 
