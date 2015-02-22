@@ -1,5 +1,3 @@
-# spec is based on OpenSUSE and MIB work
-
 Name:		brainparty
 Version:	0.61
 Release:	2
