@@ -9,6 +9,10 @@ Source0:	http://launchpad.net/brainparty/trunk/0.61/+download/%{name}%{version}.
 Source1:	%{name}-wrapper.sh
 Source2:	%{name}.desktop
 Source3:	%{name}.png
+
+Patch0:		brainparty-0.61-linking.patch
+Patch1:		brainparty-0.61-gcc-4.9-default-argument.patch
+
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(SDL_ttf)
@@ -25,7 +29,9 @@ logic, mathematics, reactions and more.
 
 %prep
 %setup -q -n %{name}
+%apply_patches
 sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
+
 
 %build
 export CC=gcc
