@@ -15,6 +15,8 @@ BuildRequires:	pkgconfig(SDL_ttf)
 BuildRequires:	pkgconfig(SDL_gfx)
 BuildRequires:	pkgconfig(SDL_image)
 BuildRequires:	pkgconfig(glu)
+BuildRequires:	gcc-c++, gcc, gcc-cpp
+
 
 %description
 Brain Party is a puzzle-solving, brain-stretching game that comes with
@@ -26,6 +28,8 @@ logic, mathematics, reactions and more.
 sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 
 %build
+export CC=gcc
+export CXX=g++
 %make
 
 %install
