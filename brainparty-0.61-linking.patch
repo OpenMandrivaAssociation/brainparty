@@ -1,0 +1,12 @@
+diff -up ./Makefile.0001 ./Makefile
+--- ./Makefile.0001	2010-03-02 13:42:51.000000000 +0000
++++ ./Makefile	2013-08-10 16:23:56.525067436 +0000
+@@ -23,7 +23,7 @@ CXX = g++
+ all: brainparty
+ 
+ brainparty: $(OBJFILES)
+-	$(CXX) -o brainparty $(INCLUDES) $(LIBS) $(OSXCOMPAT) $(OBJFILES)
++	$(CXX) -o brainparty $(INCLUDES) $(LDFLAGS) $(OBJFILES) $(LIBS) $(OSXCOMPAT)
+ 
+ %.o: %.cpp
+ 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $<
