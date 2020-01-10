@@ -29,7 +29,7 @@ logic, mathematics, reactions and more.
 
 %prep
 %setup -q -n %{name}
-%apply_patches
+%autopatch -p1
 sed -i -e "s/CXXFLAGS =/CXXFLAGS = %{optflags}/g" Makefile
 
 
