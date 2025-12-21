@@ -13,6 +13,7 @@ Source3:	%{name}.png
 Patch0:		brainparty-0.61-linking.patch
 Patch1:		brainparty-0.61-gcc-4.9-default-argument.patch
 
+BuildRequires:	make
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(SDL_ttf)
